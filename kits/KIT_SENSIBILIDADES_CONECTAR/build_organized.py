@@ -46,7 +46,7 @@ CATEGORIES = [
 GROUPS = [
     ("Valoración + Caja", ["Equity DDM", "IRR Eq", "CFADS Total", "FCFE Total", "PR Total", "Caja Final", "Caja Min"]),
     # Agregar más grupos si tenés muchos outputs:
-    # ("Ingresos", ["Ingresos Total", "Ing Ecopetrol", "Ing ODL", ...]),
+    # ("Ingresos", ["Ingresos Total", "Ing contraparte A", "Ing contraparte B", ...]),
     # ("Costos", ["Costos Op Total", "Cost Personal", ...]),
 ]
 

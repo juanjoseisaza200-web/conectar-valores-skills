@@ -1,4 +1,4 @@
-# Paleta, tipografía y layout (estilo PEL)
+# Paleta, tipografía y layout (one-pager)
 
 ## Paleta corporativa (valores `.RGB` de COM = empaquetado BGR)
 COM devuelve/recibe el color como `B*65536 + G*256 + R`. Usa estas constantes (en `dash_lib`):
@@ -42,7 +42,7 @@ COM devuelve/recibe el color como `B*65536 + G*256 + R`. Usa estas constantes (e
 - **Sub-header**: `dl.band_sub(sh, row, "texto")` — texto NAVY bold 10 (sin fondo).
 - **Panel temático** = banda navy + **tabla compacta C:P a la izquierda** (etiqueta col B, años en cabecera) + **gráfica en R:AD a la derecha** (cols 18-30) que lee la tabla compacta. Filas alternas LGRAY/WHITE.
 
-## Layout PEL (one-pager, scroll vertical)
+## Layout one-pager (scroll vertical)
 1. **FILTRO DE PERIODO** (fila ~8-9): "Desde [año] / Hasta [año]" (validación en celda).
 2. **KEY INFORMATION** (banda + 8 tarjetas).
 3. **Gráficas hero** (3 charts clave del deal: cobertura/CFADS·DSCR, paydown por tramo, DSCR vs covenant).

@@ -141,7 +141,7 @@ Bottom row: y=4.65-7.00
 | `add_arrow(slide, x, y, w, h, ...)` | Flecha → conector |
 | `add_footer(slide, page_num)` | Footer estándar |
 
-### Chart helpers (en `examples/{PROJECT}/scripts/` — copiar de PEL)
+### Chart helpers (en `examples/{PROJECT}/scripts/`)
 
 | Helper | Tipo de chart |
 |---|---|
@@ -405,14 +405,17 @@ N+7. Appendix (opcional)
 
 ---
 
-## 11. Referencia rápida — caso PEL
+## 11. Estructura de un caso
 
-Ver `examples/PEL_case/` para implementación completa:
-- `PEL_DATA_REFERENCE.md` — todas las cifras canónicas con celda fuente
-- `PEL_AUDIT_NOTES.md` — audit GO/NO-GO + issues
-- `scripts/` — 14 scripts (style + builders + main + fixes)
-- `deck/` — deck final 65 slides
-- `examples_png/` — screenshots de slides
-- `memory/` — memorias persistentes
+Cada proyecto vive en `examples/{PROYECTO}/` con esta estructura:
 
-PEL = Petroeléctrica de los Llanos · activo de transmisión eléctrica · valoración Mayo 2025 corte Dic-25 · método Pagos Restringidos.
+- `DATA_REFERENCE.md` — todas las cifras canónicas con su celda fuente
+- `AUDIT_NOTES.md` — audit GO/NO-GO + issues
+- `scripts/` — builders (style + builders por sección + main + fixes)
+- `deck/` — deck final `.pptx`
+- `source_materials/` — PDFs, imágenes y material fuente
+- `examples_png/` — screenshots de slides para verificación visual
+- `memory/` — memorias persistentes del proyecto
+
+Los casos reales no se versionan en este repositorio: contienen información
+confidencial de clientes. Crea tu carpeta de proyecto siguiendo esta estructura.

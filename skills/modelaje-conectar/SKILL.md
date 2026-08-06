@@ -1,6 +1,6 @@
 ---
 name: modelaje-conectar
-description: Skill de modelaje financiero en Excel con el estandar de Conectar Valores S.A.S. (modelos tipo Interaseo - FAST). Usar SIEMPRE que haya que crear, modificar, auditar o cerrar un modelo financiero .xlsx/.xlsm de Conectar o de sus clientes - antes de tocar una sola celda. Procedimiento por fases con gates obligatorios, libreria COM probada (tools/cv_model.py), auditor automatico (tools/auditar_modelo.py), plantillas literales de formulas, convenciones de formato y mecanica de escenarios/cierre por macro.
+description: Skill de modelaje financiero en Excel con el estandar de Conectar Valores S.A.S. (metodologia FAST). Usar SIEMPRE que haya que crear, modificar, auditar o cerrar un modelo financiero .xlsx/.xlsm de Conectar o de sus clientes - antes de tocar una sola celda. Procedimiento por fases con gates obligatorios, libreria COM probada (tools/cv_model.py), auditor automatico (tools/auditar_modelo.py), plantillas literales de formulas, convenciones de formato y mecanica de escenarios/cierre por macro.
 ---
 
 # Modelaje financiero — estándar Conectar (FAST)

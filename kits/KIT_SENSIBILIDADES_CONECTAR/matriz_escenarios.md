@@ -61,12 +61,12 @@ Cada par +/- debe cumplir:
 Si el usuario quiere algo distinto, posibles shocks comunes:
 
 ### Shocks de tarifa
-- **Tarifa fija Ecopetrol -10%**: Inputs_C!J99 *= 0.90
+- **Tarifa fija contraparte ancla -10%**: Inputs_C!J99 *= 0.90
 - **Tarifa Otrosi #5 +5%**: Inputs_C!J104 *= 1.05
 
 ### Shocks de plazo
-- **Sin extensión Ecopetrol**: J45 = 0 (apaga flag opciones)
-- **Con extensión Ecopetrol**: J45 = 1
+- **Sin extensión de contrato**: J45 = 0 (apaga flag opciones)
+- **Con extensión de contrato**: J45 = 1
 - **Plazo mayor +2 años**: J42 += 2 años (DATE math)
 
 ### Shocks de capacidad

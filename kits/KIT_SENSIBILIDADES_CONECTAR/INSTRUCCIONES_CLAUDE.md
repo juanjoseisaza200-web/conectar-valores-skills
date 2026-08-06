@@ -52,7 +52,7 @@ Los modelos siguen un patrón estándar:
 | OPEX Corocora | 384 | mensual |
 | Mant. mayores | 444 | |
 
-**Si el modelo es ESTÁNDAR (PEL/Conectar)**, usa estos rows tal cual. **No preguntes**.
+**Si el modelo es ESTÁNDAR (layout Conectar)**, usa estos rows tal cual. **No preguntes**.
 
 ### Outputs estándar (por defecto)
 - `Valoración!F137` = Equity Value (DDM)
@@ -116,7 +116,7 @@ Lee `WORKFLOW_TECNICO.md` para detalle. Resumen:
 2. **Nombre de la macro** si NO se llama `sensibilidad` (algunos modelos antiguos pueden tener variantes)
 3. **Confirmación de matriz de escenarios** si el usuario pidió "los estándar" pero querés validar (mostrar la lista y esperar OK)
 4. **Shocks específicos del activo** si el usuario menciona algo no estándar (ej: tarifa, capacidad, plazos)
-5. **Si el modelo NO es estándar** (no tiene la estructura PEL típica): ahí sí mapear con grep y validar con usuario
+5. **Si el modelo NO es estándar** (no tiene el layout estándar): ahí sí mapear con grep y validar con usuario
 
 ## Lo que NO debés preguntar (lo decidís solo)
 
@@ -163,7 +163,7 @@ Lee `WORKFLOW_TECNICO.md` para detalle. Resumen:
 
 - Escenarios CUSTOM (no en la matriz estándar): pedir qué celda y qué shock. Implementar como modificación J directa con misma mecánica.
 - Escenarios de **operación** (capacidad MW, plazos contrato): aclarar con usuario porque pueden romper otras lógicas del modelo. Suelen requerir cambio de FLAGS (J32-J38, J45) más que valores.
-- Escenarios sobre OTROS activos (Geopark, DELSUR, TRANSELCO en PEL): mapear OPEX rows distintos. Ver `WORKFLOW_TECNICO.md`.
+- Escenarios sobre otros activos del portafolio: mapear OPEX rows distintos. Ver `WORKFLOW_TECNICO.md`.
 
 ## Recordatorio final
 

@@ -56,7 +56,18 @@ Las skills de Excel y PowerPoint usan automatización COM, por lo que requieren 
 
 ## Nota sobre material de clientes
 
-Este repositorio contiene **solo las skills y sus plantillas**. Los casos de ejemplo con
-información de clientes (modelos, decks, informes de valoración y material fuente) se
-mantienen fuera del repo de forma deliberada. El `.gitignore` bloquea `source_materials/`,
-`outputs/` y archivos `.xlsx` / `.xlsm` para que no entren por accidente.
+Este repositorio contiene **solo las skills, su código y sus plantillas**. Todo el material
+de clientes se mantiene deliberadamente fuera:
+
+- Los casos de ejemplo (modelos `.xlsm`, decks de valoración, informes y material fuente)
+  no se versionan.
+- Los nombres de clientes, cifras de valoración y rutas locales fueron reemplazados por
+  placeholders genéricos en la documentación y el código.
+- El `.gitignore` bloquea `source_materials/`, `outputs/` y archivos `.xlsx` / `.xlsm`
+  para que no entren por accidente.
+
+Las plantillas `.docx` incluidas están vacías: solo contienen el estilo, la portada y el
+footer corporativo, sin contenido de ningún informe.
+
+Si vas a usar estas skills con un mandato real, mantén el modelo y los entregables fuera
+del repositorio.

@@ -1,6 +1,6 @@
 # Workflow Sensibilidades — Modelos Project Finance Conectar Valores
 
-Este documento describe el proceso completo y reproducible para correr escenarios de sensibilidad sobre modelos Excel con macro de cierre de circulares. Validado con modelo PEL Mayo 2025 VF1.
+Este documento describe el proceso completo y reproducible para correr escenarios de sensibilidad sobre modelos Excel con macro de cierre de circulares. Validado contra un modelo de valoración real con la estructura estándar de Conectar.
 
 ---
 
@@ -177,26 +177,29 @@ Por cada par +/-, validar:
 
 ---
 
-## 6. Estructura de inputs típicos (modelo PEL)
+## 6. Estructura de inputs típicos (modelo estándar Conectar)
 
-| Input | Celda Inputs_C | Default | Notas |
-|---|---|---|---|
-| IPC Colombia | J720:J734 | hist + 5%→3% LP | shock desde primer año proyectado |
-| Factor IPC→IPP | J737 | 1.1503 | IPP = IPC × factor |
-| Spread Tramos deuda | J612:J615 | 4.10%, 3.90%, 3.90%, 3.50% | sumar a curva base |
-| Curva DTF anual | J816:J821 | 5.65%-10.17% | proyección FDN |
-| Escenario IBR | J812 | 4 (Caso Base) | selector de CHOOSE |
-| Rf | J909 | 4.30% | base CAPM |
-| Beta unlevered | J910 | 0.5 | Damodaran |
-| ERP | J911 | 5.50% | |
-| CRP Colombia | J912 | 2.00% | |
-| Size premium | J913 | 1.50% | |
-| OPEX personal | J347 | 1,585 COP MM | shock x factor |
-| OPEX mant.+rep. | J349 | 7,712 COP MM | shock x factor |
-| OPEX Statcom | J382 | 105 COP MM/mes | shock x factor |
-| OPEX C.Control | J383 | 73.5 COP MM/mes | shock x factor |
-| OPEX Corocora | J384 | 158 COP MM/mes | shock x factor |
-| Mant. mayores | J444 | 1,771.5 COP MM 2025 | shock x factor |
+Las celdas son las del layout estándar. Los valores base los toma del modelo —
+no los asumas.
+
+| Input | Celda Inputs_C | Notas |
+|---|---|---|
+| IPC Colombia | J720:J734 | shock desde primer año proyectado |
+| Factor IPC→IPP | J737 | IPP = IPC × factor |
+| Spread Tramos deuda | J612:J615 | sumar a curva base |
+| Curva DTF anual | J816:J821 | proyección FDN |
+| Escenario IBR | J812 | selector de CHOOSE |
+| Rf | J909 | base CAPM |
+| Beta unlevered | J910 | Damodaran |
+| ERP | J911 | |
+| CRP Colombia | J912 | |
+| Size premium | J913 | |
+| OPEX personal | J347 | shock x factor |
+| OPEX mant.+rep. | J349 | shock x factor |
+| OPEX equipo 1 | J382 | shock x factor (COP MM/mes) |
+| OPEX centro de control | J383 | shock x factor (COP MM/mes) |
+| OPEX subestación | J384 | shock x factor (COP MM/mes) |
+| Mant. mayores | J444 | shock x factor |
 
 ### IBR Sensibilidad (Inputs_S)
 - R150 = "IBR Caso Base" (cols ~AA-BN, valores hardcoded)
@@ -218,7 +221,8 @@ Para shock IBR: `R151 = R150 + delta` (paste-special values), J812 = 5.
 | EV implícito (DDM) | F137 + F123 (calcular) |
 | Ke anual periodo a periodo | `Valoración!J86:KP86` |
 
-Baseline esperado PEL: Equity DDM = 124,334 / EV = 257,581 COP MM.
+Antes de correr escenarios, graba el baseline (Equity DDM y EV del modelo sin shocks)
+y úsalo como referencia para los deltas.
 
 ---
 
@@ -245,29 +249,23 @@ Baseline esperado PEL: Equity DDM = 124,334 / EV = 257,581 COP MM.
 
 ---
 
-## 9. Resultados validados (PEL Mayo 2025 VF1)
+## 9. Validación de resultados
 
-| # | Escenario | Equity DDM | Δ% Eq |
-|---|---|---|---|
-| 0 | BASELINE | 124,334 | 0% |
-| 1 | IPC +1% Fisher | 123,790 | -0.44% |
-| 2 | IPC -1% Fisher | 124,486 | +0.12% |
-| 3 | Spread IPP +1% | 125,099 | +0.62% |
-| 4 | Spread IPP -1% | 123,571 | -0.61% |
-| 5 | IBR +1% | 122,219 | -1.70% |
-| 6 | IBR -1% | 126,464 | +1.71% |
-| 7 | IBR +2.5% | 119,072 | -4.23% |
-| 8 | IBR -2.5% | 129,686 | +4.30% |
-| 9 | Ke +1% | 116,471 | -6.32% |
-| 10 | Ke -1% | 132,795 | +6.81% |
-| 11 | Ke +2.5% | 105,689 | -15.00% |
-| 12 | Ke -2.5% | 146,722 | +18.01% |
-| 13 | OPEX +10% | 122,546 | -1.44% |
-| 14 | OPEX -10% | 126,123 | +1.44% |
-| 15 | Downside combinado | 114,048 | -8.27% |
-| 16 | Upside combinado | 134,692 | +8.33% |
+El workflow está validado contra un modelo de valoración real: las 16 sensibilidades
+corrieron sin errores y pasaron la auditoría de pares simétricos.
 
-**Auditoría pares simétricos: PASS.** Todos los pares muestran simetría correcta y direcciones económicas válidas.
+Al cerrar una corrida, verifica sobre tus propios resultados:
+
+| Chequeo | Criterio |
+|---|---|
+| Pares simétricos | Cada par (+X / -X) debe mover el equity en direcciones opuestas |
+| Magnitud del par | Los deltas deben ser de orden similar (asimetría fuerte = revisar) |
+| Dirección económica | Ke↑ → equity↓ · IBR↑ → equity↓ · OPEX↑ → equity↓ |
+| Escalamiento | El shock de 2.5% debe mover más que el de 1% en el mismo sentido |
+| Combinados | Downside por debajo del baseline, upside por encima |
+
+**Si algún chequeo falla, el problema es del workflow (columna activa, macro de cierre,
+paste-special), no del modelo.** Ver sección 5 antes de reportar resultados.
 
 ---
 
@@ -276,7 +274,7 @@ Baseline esperado PEL: Equity DDM = 124,334 / EV = 257,581 COP MM.
 | Archivo | Uso |
 |---|---|
 | `MODELO_BASE (1).xlsm` | Modelo limpio inicial (con R151/R152 IBR Sens + Hoja Resultados) |
-| `MODELO_PEL_SENSIBILIDADES.xlsm` | Modelo con resultados grabados |
+| `MODELO_SENSIBILIDADES.xlsm` | Modelo con resultados grabados |
 | `run_sensibilidades_template.ps1` | Script template adaptable |
 | `WORKFLOW_SENSIBILIDADES.md` | Este documento |
 | `prompt_template.md` | Prompt template para invocar el proceso |

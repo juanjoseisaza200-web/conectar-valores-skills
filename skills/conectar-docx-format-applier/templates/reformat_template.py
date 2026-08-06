@@ -74,7 +74,7 @@ def detect_highlight(headers, rows):
                 return i
     for i, row in enumerate(rows):
         first = (row[0] or '').lower()
-        if any(kw in first for kw in ['cliente', 'interaseo', 'mediana']):
+        if any(kw in first for kw in ['cliente', 'mediana']):
             return i
     return None
 

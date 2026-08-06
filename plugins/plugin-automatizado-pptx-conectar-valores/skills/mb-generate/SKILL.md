@@ -43,7 +43,7 @@ del deck.
 
 3. **Inferir el nombre de proyecto para el footer.** Usa
    `engine/mb_engine.js` → `inferProjectName(title)` para derivar el texto
-   corto del footer ("GRUPO INTERASEO", "ADP", etc.) a partir del título
+   corto del footer ("GRUPO EJEMPLO", "ACME", etc.) a partir del título
    de la primera slide de contenido — nunca lo hardcodees a mano salvo que
    el usuario pida un texto de footer distinto explícitamente.
 

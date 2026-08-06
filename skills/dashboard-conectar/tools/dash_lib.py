@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""dash_lib — libreria de construccion de dashboards (estandar Conectar / estilo PEL).
-Codigo PROBADO en produccion (Interaseo Dashboard v2..v11). Depende de cv_model (modelaje-conectar).
+"""dash_lib — libreria de construccion de dashboards (estandar Conectar / one-pager).
+Codigo PROBADO en produccion (v2..v11). Depende de cv_model (modelaje-conectar).
 NO reescribir COM a mano: usar estos helpers. Convenciones en reference/*.md.
 
 Uso:

@@ -21,22 +21,25 @@ IB_Deck_Kit/
 │                               add_kpi_strip, add_section_chip, add_section_title,
 │                               add_filled_text, add_arrow, add_footer, add_rect, add_rich)
 └── examples/
-    └── PEL_case/            ← caso completo PEL (referencia / patrón)
-        ├── PEL_DATA_REFERENCE.md
-        ├── PEL_AUDIT_NOTES.md
-        ├── scripts/         ← builders específicos PEL
+    └── {PROYECTO}/          ← una carpeta por proyecto (no versionadas)
+        ├── DATA_REFERENCE.md
+        ├── AUDIT_NOTES.md
+        ├── scripts/         ← builders específicos del proyecto
         ├── deck/            ← deck final (.pptx)
         ├── source_materials/← PDFs, imágenes, mapas
         ├── examples_png/    ← screenshots
         └── memory/          ← memorias persistentes del proyecto
 ```
 
+> Las carpetas de `examples/` contienen información confidencial de clientes y por eso
+> no se versionan. El kit publica solo `core/` y la metodología.
+
 ## 🚀 Quick start (proyecto nuevo)
 
 1. **Crea carpeta del proyecto nuevo**, ejemplo:
    `Desktop/IB_Deck_Kit/examples/MY_PROJECT/`
 
-2. **Copia la estructura de PEL_case** (scripts, deck, source_materials, etc.)
+2. **Crea la estructura** descrita en `PLAYBOOK.md` §11 (scripts, deck, source_materials, etc.)
 
 3. **Adapta los scripts**:
    - Edita los paths en `*_main.py` (SRC, DEST, sys.path)
@@ -44,14 +47,14 @@ IB_Deck_Kit/
    - Mantén `core/deck_style.py` intacto (helpers genéricos)
 
 4. **Abre Claude Code** en `IB_Deck_Kit/` y dile:
-   > "Lee CLAUDE.md y PLAYBOOK.md. El proyecto es {nombre} en `examples/MY_PROJECT/`. Reviso `examples/PEL_case/` como referencia. Estoy listo para construir."
+   > "Lee CLAUDE.md y PLAYBOOK.md. El proyecto es {nombre} en `examples/MY_PROJECT/`. Estoy listo para construir."
 
 5. Listo.
 
-## 📋 Quick start (continuar PEL)
+## 📋 Quick start (continuar un proyecto)
 
 1. Abre Claude Code en `IB_Deck_Kit/`
-2. Dile: "Lee CLAUDE.md, PLAYBOOK.md, examples/PEL_case/PEL_DATA_REFERENCE.md. Continúo en `examples/PEL_case/`."
+2. Dile: "Lee CLAUDE.md, PLAYBOOK.md, examples/{PROYECTO}/DATA_REFERENCE.md. Continúo en `examples/{PROYECTO}/`."
 
 ## ⚙️ Requisitos en el PC nuevo
 

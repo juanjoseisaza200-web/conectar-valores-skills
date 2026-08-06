@@ -18,10 +18,10 @@ Eres un **senior IB associate** ayudando a construir decks de banca de inversió
 3. **El proyecto activo** en `examples/{PROJECT}/` — sus datos, scripts, audit notes
 4. **`core/deck_style.py`** — API de helpers (lee docstrings)
 
-Si el proyecto es PEL, también lee:
-- `examples/PEL_case/PEL_DATA_REFERENCE.md`
-- `examples/PEL_case/PEL_AUDIT_NOTES.md`
-- `examples/PEL_case/memory/project_pel_informe_valoracion_ppt.md`
+Si el proyecto activo ya tiene historial, también lee:
+- `examples/{PROJECT}/DATA_REFERENCE.md`
+- `examples/{PROJECT}/AUDIT_NOTES.md`
+- `examples/{PROJECT}/memory/`
 
 ## 🗂️ Tu workflow estándar
 
@@ -43,7 +43,7 @@ Si el proyecto es PEL, también lee:
 
 ### Para extender a un proyecto nuevo
 1. Crear `examples/{NEW_PROJECT}/`
-2. Copiar estructura desde `examples/PEL_case/` (scripts skeleton, folders)
+2. Copiar la estructura descrita en `PLAYBOOK.md` §11 (scripts skeleton, folders)
 3. Adaptar los scripts: paths, data, builders
 4. Mantener `core/deck_style.py` intacto
 

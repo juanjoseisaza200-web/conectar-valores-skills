@@ -9,9 +9,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 sys.path.insert(0, os.path.expanduser(r"~\.claude\skills\modelaje-conectar\tools"))
 import cv_model as cv
 
-BASE = r"C:\Users\Administrador\OneDrive - CONECTAR VALORES SAS\Archivos de Ricardo Palacios Sarmiento - Modelos Interaseo\Mapa de Variables Interaseo SAS ESP"
-REAL = BASE + r"\20260611_InteraseoSAS_ESP_Sent (TramoCP&TramoLP) JD Tx - DCH - Obs JD v3.xlsm"
-SBX = r"C:\Users\Administrador\AppData\Local\Temp\interaseo_mv\_MOCKTEST_SANDBOX.xlsm"
+BASE = r"C:\Users\<usuario>\OneDrive - CONECTAR VALORES SAS\<carpeta del modelo>"
+REAL = BASE + r"\<modelo real>.xlsm"
+SBX = r"C:\Users\<usuario>\AppData\Local\Temp\cv_modelo\_MOCKTEST_SANDBOX.xlsm"
 AUD = os.path.expanduser(r"~\.claude\skills\modelaje-conectar\tools\auditar_modelo.py")
 
 resultados = []

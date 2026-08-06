@@ -23,7 +23,7 @@ La hoja `Macros` tiene filas `_COPY` (fórmulas vivas: FCF, GMF, IRA, saldos de 
 **Cuándo re-cerrar (obligatorio)**: tras cualquier cambio que toque caja, deuda, GMF, intereses o capital de trabajo; tras cambiar de escenario; tras cambiar inputs de un escenario. Si los resultados del cambio son matemáticamente idénticos (pura re-arquitectura), el cierre converge en 0 iteraciones — eso es la CONFIRMACIÓN, no un error.
 
 ## Escenarios
-- Selector: el usuario escribe el NOMBRE en `Inputs_C!F6`; `I5 = MATCH(F6, K5:X5, 0)` resuelve la columna. Nombres en `Inputs_C!K5:X5` (Interaseo: Blackrock / −100bps / −200bps / +WHT Intereses).
+- Selector: el usuario escribe el NOMBRE en `Inputs_C!F6`; `I5 = MATCH(F6, K5:X5, 0)` resuelve la columna. Nombres en `Inputs_C!K5:X5` (ej.: Caso Base / −100bps / −200bps / +WHT Intereses).
 - Todos los inputs: `F = INDEX(K:X, $I$5)` → F6 conmuta todo el modelo.
 - Macros refleja: `F46 ('Scenario') = Inputs_C!I5`; almacena UN bloque de cierre POR escenario ("EJ 1/2/3…", offsets `2×esc + Variables×(esc−1)`; Repayment `2×esc + 10×(esc−1)`).
 - **Cerrar un escenario NO cierra los demás.** Para presentar varios: por cada escenario → poner F6 → `cv.cerrar_modelo` → auditar → siguiente.

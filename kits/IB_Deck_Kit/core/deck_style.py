@@ -1,4 +1,4 @@
-"""PEL v2 — Build slides 15-23 in MUFG-elegant style.
+"""Deck style — helpers para construir slides en estilo MUFG-elegant.
 Arial typography, navy+teal sage palette, generous margins, minimalist tables.
 """
 from pptx import Presentation
@@ -29,6 +29,10 @@ GOLD        = RGBColor(0xC9, 0xA2, 0x27)
 
 # Font
 FONT = "Arial"
+
+# Nombre del proyecto en el footer. Sobrescribir por proyecto:
+#   import deck_style; deck_style.PROJECT_NAME = "NOMBRE DEL ACTIVO"
+PROJECT_NAME = "PROYECTO"
 
 
 # Margins (inches)
@@ -296,8 +300,9 @@ def add_kpi_sidebar(slide, left, top, width, height, kpis, *,
                     line_spacing=1.15)
 
 
-def add_footer(slide, page_num, total_pages=None):
+def add_footer(slide, page_num, total_pages=None, project=None):
     """MUFG-style footer at bottom. Subtle, all caps wide-tracking."""
+    project = project or PROJECT_NAME
     fy = 7.20
     add_textbox(slide, 0.40, fy, 4.0, 0.20,
                 "ESTRICTAMENTE PRIVADO Y CONFIDENCIAL",
@@ -306,7 +311,7 @@ def add_footer(slide, page_num, total_pages=None):
                 "PREPARADO POR  ·  CONECTAR VALORES S.A.S.",
                 size=8, color=GRAY_TEXT, align=PP_ALIGN.CENTER, font=FONT)
     add_textbox(slide, 9.0, fy, 3.90, 0.20,
-                f"PETROELÉCTRICA DE LOS LLANOS  ·  {page_num:02d}",
+                f"{project}  ·  {page_num:02d}",
                 size=8, bold=True, color=NAVY, align=PP_ALIGN.RIGHT, font=FONT)
 
 

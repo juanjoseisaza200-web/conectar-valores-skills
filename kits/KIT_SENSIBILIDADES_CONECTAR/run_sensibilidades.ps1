@@ -1,5 +1,5 @@
 # =============================================================================
-# RUN SENSIBILIDADES - Template adaptable a cualquier modelo PEL/PF Conectar
+# RUN SENSIBILIDADES - Template adaptable a cualquier modelo PF Conectar
 # =============================================================================
 # Workflow validado: modificar J directo, K como backup, F6 y J7 coinciden.
 # Macro `sensibilidad` cierra circulares + copy-paste Outputs.
@@ -43,7 +43,7 @@ $CFG = @{
     IppFactorRow = 737
     RfRow        = 909
     IbrScenRow   = 812  # selector escenario IBR (default 4=base)
-    OpexRows     = @(347, 349, 382, 383, 384, 444)  # PEL OPEX inputs
+    OpexRows     = @(347, 349, 382, 383, 384, 444)  # OPEX inputs (layout estandar)
 
     # IBR Sensibilidad (Inputs_S)
     IbrBaseRow   = 150  # IBR Caso Base (hardcoded)

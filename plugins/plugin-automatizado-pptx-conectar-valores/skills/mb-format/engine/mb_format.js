@@ -6,9 +6,9 @@
  *   node mb_format.js <input.pptx> <slide_range> <output.pptx>
  *
  * Ejemplos:
- *   node mb_format.js ./interaseo.pptx 95        ./interaseo_cv_s95.pptx
- *   node mb_format.js ./interaseo.pptx 95-119    ./interaseo_cv.pptx
- *   node mb_format.js ./interaseo.pptx all       ./interaseo_cv_full.pptx
+ *   node mb_format.js ./deck.pptx 95        ./deck_cv_s95.pptx
+ *   node mb_format.js ./deck.pptx 95-119    ./deck_cv.pptx
+ *   node mb_format.js ./deck.pptx all       ./deck_cv_full.pptx
  *
  * El script lee el rango de slides indicado, aplica la detección de template
  * y la reconstrucción con identidad CV a cada una, y guarda el resultado.

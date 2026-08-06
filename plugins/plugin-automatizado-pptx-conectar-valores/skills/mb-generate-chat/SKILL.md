@@ -86,9 +86,9 @@ Schema completo:
 
 ```js
 {
-  projectName: "NOMBRE CORTO PARA FOOTER",   // ej. "GRUPO INTERASEO"
+  projectName: "NOMBRE CORTO PARA FOOTER",   // ej. "GRUPO EJEMPLO"
   footerLeft:   "ESTRICTAMENTE PRIVADO Y CONFIDENCIAL",  // siempre este valor exacto
-  footerCenter: "VALORACIÓN GRUPO INTERASEO",             // omitir si es igual a projectName
+  footerCenter: "VALORACIÓN GRUPO EJEMPLO",             // omitir si es igual a projectName
 
   slides: [
 
@@ -159,7 +159,7 @@ Schema completo:
 **Reglas de construcción del objeto:**
 
 - `footerLeft` es siempre `"ESTRICTAMENTE PRIVADO Y CONFIDENCIAL"` — no cambiar nunca
-- `projectName` se infiere del título del deck: "Valoración del Grupo Interaseo" → `"GRUPO INTERASEO"` (mayúsculas, sin artículos)
+- `projectName` se infiere del título del deck: "Valoración del Grupo Ejemplo" → `"GRUPO EJEMPLO"` (mayúsculas, sin artículos)
 - Los campos marcados como "omitir si no hay" se omiten completamente del objeto (no poner `null` ni `""`)
 - Los colores de tarjeta se expresan como hex sin `#`: `"1A2744"`, `"B8862A"`, `"8FA3B1"`
 - El texto de bullets usa `•` como carácter de viñeta, no `-` ni `*`

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Librería de modelaje Conectar (estándar FAST) — código probado en Interaseo jun-2026.
+"""Librería de modelaje Conectar (estándar FAST) — código probado en producción jun-2026.
 Uso: import cv_model as cv  (añadir esta carpeta a sys.path).
 Todas las funciones asumen pywin32. Constantes COM incluidas."""
 import os, time, json

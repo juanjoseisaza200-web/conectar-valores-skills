@@ -152,7 +152,7 @@ Notar: **no hay `tblBorders`** a nivel tabla (los bordes se ponen por celda).
 - Spacing: idéntico al header
 - vAlign: center
 
-### 4.4 Fila destacada (cliente / Interaseo)
+### 4.4 Fila destacada (fila del cliente)
 
 ```xml
 <w:tr>
@@ -179,7 +179,7 @@ Notar: **no hay `tblBorders`** a nivel tabla (los bordes se ponen por celda).
           <w:color val="17375E"/>                        <!-- NAVY -->
           <w:sz val="18"/>                               <!-- 9pt -->
         </w:rPr>
-        <w:t>Interaseo</w:t>
+        <w:t>Cliente</w:t>
       </w:r>
     </w:p>
   </w:tc>

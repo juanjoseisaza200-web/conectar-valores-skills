@@ -34,7 +34,7 @@ Cada entry necesita:
 - `cell`: notación A1
 - `type`: `value` (default) o `pct` (formato porcentaje)
 
-## Catálogo de outputs típicos PEL/Conectar
+## Catálogo de outputs típicos Conectar
 
 ### Valoración
 

@@ -27,7 +27,7 @@ Las 16 sensibilidades estándar (ver matriz_escenarios.md) — IPC, IPP, IBR, Ke
 Por defecto: Equity DDM (`Valoración!F137`) + IRR + CFADS Total + FCFE Total + PR Total + Caja Final + Caja Mín (waterfall en `EEFF IFRS`).
 
 [Si querés agregar más outputs, lista acá. Ejemplos:
-- "Trackea también todos los Ingresos (Total + Ecopetrol + ODL + Quifa + Geopark)"
+- "Trackea también todos los Ingresos (Total + desglose por contraparte)"
 - "Trackea Costos Operacionales y Gastos por línea"
 - "Solo me importa: Equity WACC F124, Equity DDM F137, Equity PR F148"
 - "Series mensuales para CFADS, FCFE, Pagos Restringidos y Saldo Caja"
@@ -53,7 +53,7 @@ Al final, Claude correrá `build_organized.py` para generar un xlsx limpio multi
 ## Tu compromiso (Claude)
 
 1. Lee primero `INSTRUCCIONES_CLAUDE.md` y `WORKFLOW_TECNICO.md` en esta carpeta.
-2. Mapea inputs del modelo (si la estructura es PEL/Conectar estándar, no me preguntes nada — usá los rows típicos).
+2. Mapea inputs del modelo (si es el layout estándar de Conectar, no me preguntes nada — usá los rows típicos).
 3. Verifica baseline (corre macro sin shocks, lee Equity DDM) y reportame el número.
 4. Si el baseline da error o el modelo se ve no estándar, paramá y preguntáme.
 5. Confirmá la matriz de escenarios antes de correr (puedo ajustarla).
@@ -100,7 +100,7 @@ Solo estos escenarios:
 
 Las 16 estándar + estos custom:
 - "Tarifa Otrosi #5 -10%": multiplica Inputs_C!J104 por 0.90
-- "Sin extensión Ecopetrol": pone Inputs_C!J45 = 0
+- "Sin extensión de contrato": pone Inputs_C!J45 = 0
 ```
 
 ### Si NO querés que toque la macro (solo lectura)
@@ -113,16 +113,16 @@ Solo mapeame los inputs y outputs del modelo (sin correr nada). Quiero saber dó
 
 ---
 
-## Ejemplo lleno (para PEL)
+## Ejemplo lleno
 
 ```
 Necesito que corras un set de sensibilidades sobre mi modelo financiero usando este kit.
 
 ## Mi info
 
-- Archivo del modelo: 20260429_Valoracion_PEL_MAYO_2025_VF1.xlsm
+- Archivo del modelo: 20260429_Valoracion_ACTIVO_VF1.xlsm
   (está en esta carpeta KIT_SENSIBILIDADES_CONECTAR)
-- Nombre del activo / proyecto: PEL Colombia (línea transmisión)
+- Nombre del activo / proyecto: Activo de transmisión eléctrica (Colombia)
 - Fecha de valoración: Dic 2025
 
 ## Lo que quiero

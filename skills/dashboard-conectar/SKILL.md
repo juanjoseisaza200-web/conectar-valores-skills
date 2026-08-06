@@ -1,9 +1,9 @@
 ---
 name: dashboard-conectar
-description: Construye dashboards financieros ejecutivos en Excel (.xlsm) con el estandar visual de Conectar Valores S.A.S. — estilo PEL/one-pager, paleta corporativa, charts dinamicos con filtro de periodo, sin VBA. Usar SIEMPRE que se pida crear, rediseñar o ampliar un dashboard/tablero sobre un modelo financiero. Procedimiento por fases con gates: ESCANEA el modelo hoja por hoja, RAZONA a profundidad que metricas/ratios/flujos presentar (con su celda fuente), DISEÑA el layout, CONSTRUYE con la libreria COM probada (tools/dash_lib.py), agrega interactividad y AUDITA (KPIs identicos al modelo, ESF=0, colores corporativos, sin sparklines, sin solapes). Cero alucinacion: toda cifra trazable a una celda.
+description: Construye dashboards financieros ejecutivos en Excel (.xlsm) con el estandar visual de Conectar Valores S.A.S. — estilo one-pager, paleta corporativa, charts dinamicos con filtro de periodo, sin VBA. Usar SIEMPRE que se pida crear, rediseñar o ampliar un dashboard/tablero sobre un modelo financiero. Procedimiento por fases con gates: ESCANEA el modelo hoja por hoja, RAZONA a profundidad que metricas/ratios/flujos presentar (con su celda fuente), DISEÑA el layout, CONSTRUYE con la libreria COM probada (tools/dash_lib.py), agrega interactividad y AUDITA (KPIs identicos al modelo, ESF=0, colores corporativos, sin sparklines, sin solapes). Cero alucinacion: toda cifra trazable a una celda.
 ---
 
-# Dashboard financiero — estándar Conectar (estilo PEL)
+# Dashboard financiero — estándar Conectar (one-pager)
 
 **Un dashboard es PURA PRESENTACIÓN: NO modifica el modelo.** Lee fórmulas vivas del modelo y las muestra; los KPIs del modelo deben quedar **idénticos** antes y después. Diseñada para ejecutarse sin errores: sigue las fases EN ORDEN, usa `tools/dash_lib.py` (código probado en producción — no reescribas COM a mano), respeta la paleta y las lecciones de `reference/`, y NO declares terminado nada sin PASS de `tools/audit_dashboard.py`.
 
@@ -40,7 +40,7 @@ Con el mapa de FASE 0, **razonar A PROFUNDIDAD qué presentar** — no copiar un
 3. Escribir el **PLAN DE CONTENIDO** (`templates/plan-contenido.md`): secciones → para cada una sus KPIs/filas (con `Hoja!celda`), charts (tipo, series con fuente), y la banda KPI ejecutiva de 8 tarjetas.
 4. **GATE 1**: presentar el plan al usuario con las fuentes; aprobación explícita antes de construir.
 
-## FASE 2 — DISEÑAR el layout (PEL one-pager)
+## FASE 2 — DISEÑAR el layout (one-pager)
 Estructura canónica (de arriba a abajo), detalle en `reference/paleta-y-formato.md` §layout:
 `FILTRO DE PERIODO` → banda **KEY INFORMATION** (8 tarjetas KPI a todo el ancho, número grande + sub▲▼) → **gráficas hero** (3 charts clave: cobertura/DSCR, paydown, covenant) → **PANELES TEMÁTICOS** (cada uno = banda navy + **tabla compacta C:P** a la izquierda [años 2026-2039 en cols C:P, etiqueta en col B] + **gráfica R:AD** a la derecha que lee la tabla compacta) → **secciones de detalle** con charts hero → **cascada de caja** al final.
 
@@ -67,7 +67,7 @@ Memo .md de qué muestra cada sección + su fuente; actualizar memoria del proye
 
 ## Referencia rápida
 - `reference/razonar-contenido.md` — universo de métricas por dimensión + reglas para decidir QUÉ presentar (FASE 1).
-- `reference/paleta-y-formato.md` — paleta BGR, tipografía, tarjetas KPI, tabla compacta, bandas, layout PEL.
+- `reference/paleta-y-formato.md` — paleta BGR, tipografía, tarjetas KPI, tabla compacta, bandas, layout one-pager.
 - `reference/charts-com.md` — todas las lecciones COM de charts (tipos difíciles, waterfall, donut, row-collapse, `&` en nombre de hoja).
 - `reference/interactividad.md` — filtro de periodo sin VBA (validación en celda + OFFSET), reset de color al repuntar, dropdowns prohibidos.
 - `tools/dash_lib.py` — librería de construcción (bandas, tarjetas, tablas compactas, charts, cascada, filtro, colores, render).

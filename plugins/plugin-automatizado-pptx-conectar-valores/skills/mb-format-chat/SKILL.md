@@ -80,7 +80,7 @@ Características: título grande, posiblemente logo de la empresa cliente,
 fecha, ciudad. Normalmente es la primera slide.
 
 Datos que puede faltar y hay que preguntar al usuario antes de generar:
-- `client`: empresa o persona destinataria (ej. "Grupo Interaseo").
+- `client`: empresa o persona destinataria (ej. "Grupo Ejemplo").
 - `month`: mes y año de la presentación (ej. "Junio 2026").
 - `city` y `country`: ciudad y país (ej. "Medellín, Colombia").
 
@@ -200,7 +200,7 @@ const PRESENTATION_DATA = {
   completamente (no poner `""`).
 - `projectName`: inferir a partir del título de la primera slide de
   contenido (la que sigue a la portada). Extraer las palabras clave en
-  mayúsculas. Ejemplo: "Valoración del Grupo Interaseo" → `"GRUPO INTERASEO"`.
+  mayúsculas. Ejemplo: "Valoración del Grupo Ejemplo" → `"GRUPO EJEMPLO"`.
 
 ---
 

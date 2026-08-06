@@ -1,6 +1,6 @@
 # dashboard-conectar — instalación (para compañeros)
 
-Skill para construir **dashboards financieros ejecutivos en Excel** (estilo PEL / Conectar Valores) sobre cualquier modelo .xlsm. Escanea el modelo, razona qué presentar, lo construye con la paleta y reglas corporativas, agrega filtro de periodo dinámico (sin VBA) y se autoaudita.
+Skill para construir **dashboards financieros ejecutivos en Excel** (estilo one-pager Conectar Valores) sobre cualquier modelo .xlsm. Escanea el modelo, razona qué presentar, lo construye con la paleta y reglas corporativas, agrega filtro de periodo dinámico (sin VBA) y se autoaudita.
 
 ## Instalar (1 minuto)
 1. Descomprimir este zip dentro de tu carpeta de skills de Claude Code:

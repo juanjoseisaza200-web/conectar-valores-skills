@@ -2,7 +2,7 @@
 r"""Captura de outputs de un modelo (SOLO LECTURA) para auditoría: DSCR reportado vs RECALCULADO
 con servicio total, covenants, liquidez en meses de OPEX, checks.
 USO: python capturar_outputs.py "ruta\modelo.xlsm"
-NOTA: las filas están parametrizadas para el modelo Interaseo v3 — EDITAR el bloque FILAS para otro modelo.
+NOTA: las filas están parametrizadas para un modelo de referencia — EDITAR el bloque FILAS para otro modelo.
 Patrón clave reutilizable: nunca confiar en el ratio del modelo; reconstruir numerador y denominador
 desde los componentes y comparar (la diferencia es hallazgo)."""
 import sys, os, time, json

@@ -13,7 +13,7 @@ Plugin de Claude Code con dos skills para Conectar Valores S.A.S.
   grid derivado al estilo Müller-Brockmann (módulo/canaleta basados en el
   tamaño del cuerpo de texto) más la identidad visual exacta de CV (paleta
   navy/dorado, Cambria/Arial, footer corporativo de 3 segmentos, logo).
-- **mb-format** — audita y reformatea un .pptx existente aplicando el grid MB y la identidad CV. IMPLEMENTADO — template "subsidiary_profile" (perfiles de empresa subsidiaria) probado 25/25 contra el deck real de Interaseo.
+- **mb-format** — audita y reformatea un .pptx existente aplicando el grid MB y la identidad CV. IMPLEMENTADO — template "subsidiary_profile" (perfiles de empresa subsidiaria) probado 25/25 contra un deck de valoración real.
   que cumpla el mismo grid. No implementado todavía, solo existe como
   placeholder documentando el problema (ver skills/mb-format/SKILL.md).
 
@@ -106,7 +106,7 @@ a JJ.
   usuario.
 - El nombre de proyecto en el footer se infiere del título de la
   primera slide de contenido (inferProjectName()), no se hardcodea —
-  ej. "Valoración del Grupo Interaseo" → "GRUPO INTERASEO".
+  ej. "Valoración del Grupo Ejemplo" → "GRUPO EJEMPLO".
 
 ## Archivos de referencia rápida
 

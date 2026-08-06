@@ -4,8 +4,8 @@ Calcula empalme 2025->2026, CAGR hist vs proy, y flags de desfase. Genera anexo 
 import pandas as pd, csv, sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-BASE = r"C:\Users\Administrador\OneDrive - CONECTAR VALORES SAS\Archivos de Ricardo Palacios Sarmiento - Modelos Interaseo\Mapa de Variables Interaseo SAS ESP"
-TMP = r"C:\Users\Administrador\AppData\Local\Temp\interaseo_mv"
+BASE = r"C:\Users\<usuario>\OneDrive - CONECTAR VALORES SAS\<carpeta del modelo>"
+TMP = r"C:\Users\<usuario>\AppData\Local\Temp\cv_modelo"
 
 eeff = {}
 with open(TMP + r"\eeff_v3_val.tsv", encoding="utf-8") as f:

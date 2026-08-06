@@ -6,7 +6,7 @@
  * Genera: una slide pptxgenjs con el grid MB y la paleta CV aplicada
  *
  * Este módulo maneja específicamente el template de "empresa subsidiaria"
- * (slides 95-119 de Interaseo), que es el primer caso real de mb-format.
+ * (perfiles de subsidiaria), que es el primer caso real de mb-format.
  * Cuando se agreguen más familias de slides, cada una tendrá su propio
  * handler registrado en TEMPLATE_HANDLERS abajo.
  */
@@ -47,7 +47,7 @@ function detectTemplate(extracted) {
 // ─── HELPERS DE CLASIFICACIÓN DE KPIs ────────────────────────────────────────
 
 /**
- * Los KPIs en el archivo de Interaseo no están en un GROUP sino como shapes
+ * Los KPIs en el archivo de referencia no están en un GROUP sino como shapes
  * sueltos con valores numéricos cortos. Los detectamos como elementos unknown
  * con font_size >= 12 y 1-2 palabras, agrupándolos por proximidad en Y.
  */
@@ -305,7 +305,7 @@ function reconstructSubsidiaryProfile(slide, pres, extracted) {
   const companyShort = company ? company.text.replace(/^\d+\.\s*/, "").toUpperCase() : "EMPRESA";
   E.addFooter(slide, pres, grid, {
     left: "ESTRICTAMENTE PRIVADO Y CONFIDENCIAL",
-    center: "VALORACIÓN GRUPO INTERASEO",
+    center: "VALORACIÓN GRUPO EJEMPLO",
     right: `${companyShort}`,
   });
 }

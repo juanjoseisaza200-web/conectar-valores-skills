@@ -1,6 +1,6 @@
 # Protocolo completo de auditoría MD (metodología de referencia)
 
-Fuente: prompt de auditoría del equipo Conectar (jun-2026) + práctica del mandato Interaseo. Este documento es la METODOLOGÍA DETALLADA; el flujo operativo con gates está en SKILL.md.
+Fuente: prompt de auditoría del equipo Conectar (jun-2026) + práctica de mandatos reales. Este documento es la METODOLOGÍA DETALLADA; el flujo operativo con gates está en SKILL.md.
 
 ## Severidades
 - **Crítico**: cambia la decisión (inversión/deuda/DSCR/covenant/valoración).

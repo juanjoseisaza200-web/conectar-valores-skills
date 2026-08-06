@@ -1,6 +1,6 @@
 ---
 name: mb-format
-description: Audita y reformatea un archivo .pptx EXISTENTE aplicando el grid Müller-Brockmann y la identidad de marca de Conectar Valores S.A.S. Usa este skill cuando el usuario suba o mencione un .pptx que ya existe y quiera aplicarle el formato CV, cambiar colores, reemplazar logos, o ajustar el grid. Template implementado: "subsidiary_profile" (slides de perfil financiero por empresa subsidiaria, como las slides 95-119 del deck de Interaseo). Invocar con /mb-format.
+description: Audita y reformatea un archivo .pptx EXISTENTE aplicando el grid Müller-Brockmann y la identidad de marca de Conectar Valores S.A.S. Usa este skill cuando el usuario suba o mencione un .pptx que ya existe y quiera aplicarle el formato CV, cambiar colores, reemplazar logos, o ajustar el grid. Template implementado: "subsidiary_profile" (slides de perfil financiero por empresa subsidiaria, perfiles de subsidiaria dentro de un deck de valoración). Invocar con /mb-format.
 ---
 
 > **Entorno requerido: Claude Code (CLI)**
@@ -14,7 +14,7 @@ description: Audita y reformatea un archivo .pptx EXISTENTE aplicando el grid M�
 ## Estado: IMPLEMENTADO (template inicial: subsidiary_profile)
 
 El skill funciona de punta a punta. Probado contra 25 slides reales del
-deck de valoración de Grupo Interaseo (slides 95-119), con 25/25 detectadas
+un deck de valoración real (25 slides de perfil), con 25/25 detectadas
 y reformateadas correctamente.
 
 ## Flujo de trabajo
@@ -72,7 +72,7 @@ Señales de detección: tiene `company` + `description` + `fin_table`
   template.
 - **Slides con alta fragmentación de texto** (fragRatio > 1.5): texto
   cortado en muchos runs separados (ej. slide 4 "Índice" o slide 18 del
-  deck de Interaseo) — el extractor las marca correctamente pero el
+  deck de referencia) — el extractor las marca correctamente pero el
   reconstructor no tiene un template para "índice manual fragmentado".
 
 ## Cómo agregar un template nuevo

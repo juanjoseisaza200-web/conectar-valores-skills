@@ -67,7 +67,7 @@ from build_from_outline import build_document
 doc_spec = {
     "output_path": "C:\\Users\\Usuario\\Desktop\\20260521_Analisis_X_VF.docx",
     "portada": {
-        "empresa": "INTERASEO S.A.S E.S.P.",
+        "empresa": "EMPRESA EJEMPLO S.A.S E.S.P.",
         "titulo": "ANÁLISIS DE X",
         "subtitulo": "Comparativo Y vs Z",
         "descripcion": "...",

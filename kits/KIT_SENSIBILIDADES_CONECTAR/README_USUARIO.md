@@ -25,7 +25,7 @@ Asegúrate de tener:
 
 Abre `PROMPT_INICIAL.md`, copia el bloque de prompt, **reemplaza el nombre de tu archivo** y pégalo en Claude. Eso es todo. Claude se encarga del resto.
 
-Si el modelo tiene la estructura estándar PEL/Conectar (igual mapping de filas), Claude correrá sin preguntarte nada. Si es un modelo distinto, te preguntará SOLO lo que no pueda inferir solo (ej: si la macro se llama distinto, o si el Equity DDM está en otra celda).
+Si el modelo tiene el layout estándar de Conectar (igual mapping de filas), Claude correrá sin preguntarte nada. Si es un modelo distinto, te preguntará SOLO lo que no pueda inferir solo (ej: si la macro se llama distinto, o si el Equity DDM está en otra celda).
 
 ### 4. Espera y revisa
 
@@ -113,7 +113,6 @@ Especificás esto en el prompt inicial. Por ejemplo:
 | `outputs_configurables.md` | Ambos | Cómo trackear cualquier celda (deuda, FCF, DSCR, etc.) |
 | `run_sensibilidades.ps1` | Claude | Script PowerShell adaptable que ejecuta |
 | `build_organized.py` | Claude | Post-procesador: genera xlsx multi-hoja organizado (Resumen + Tablas + Series mensuales) |
-| `ejemplos/ejemplo_PEL_resultados.md` | Ambos | Resultados validados PEL como referencia |
 
 ---
 
