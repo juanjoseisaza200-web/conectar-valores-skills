@@ -15,8 +15,6 @@ Colección de skills, plugins y kits para Claude usados en Conectar Valores S.A.
 | `auditoria-md-conectar` | Auditoría de modelos financieros con mentalidad de MD: protocolo de 17 fases, backtesting PxQ, CFADS/DSCR/covenants, sensibilidades. |
 | `dashboard-conectar` | Dashboards ejecutivos en Excel (`.xlsm`) estilo one-pager, charts dinámicos sin VBA, con auditoría de cifras contra el modelo. |
 | `aprender-de-errores` | Mejora continua: registra lecciones cuando una verificación falla o el usuario corrige un error, y las consulta antes de repetir un tipo de tarea. |
-| `taste-skill` | Skill genérica de frontend anti-slop (landing pages, portfolios). Usada en el sitio web de CV. |
-| `redesign-skill` | Skill genérica de rediseño de sitios y apps existentes. Usada en el sitio web de CV. |
 
 ### `plugins/` — Plugins de Claude Code
 
