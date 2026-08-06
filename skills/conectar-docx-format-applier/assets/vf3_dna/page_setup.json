@@ -1,0 +1,25 @@
+{
+  "page_size_twips": {
+    "w": "12240",
+    "h": "15840"
+  },
+  "page_size_inches": {
+    "width": 8.5,
+    "height": 11.0
+  },
+  "margins_twips": {
+    "top": "1728",
+    "right": "1138",
+    "bottom": "1138",
+    "left": "1138",
+    "header": "720",
+    "footer": "720",
+    "gutter": "0"
+  },
+  "margins_inches": {
+    "top": 1.2,
+    "bottom": 0.7902777777777777,
+    "left": 0.7902777777777777,
+    "right": 0.7902777777777777
+  }
+}

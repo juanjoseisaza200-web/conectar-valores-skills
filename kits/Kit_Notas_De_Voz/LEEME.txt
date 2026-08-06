@@ -1,0 +1,49 @@
+KIT NOTAS DE VOZ - Sistema de transcripcion (Whisper + FFmpeg)
+================================================================
+
+QUE HACE
+--------
+Convierte cualquier audio (mp3, wav, m4a, aac, ogg, flac) a un .txt
+con la transcripcion en espanol. Funciona 100% offline una vez
+instalado, sin pagar API ni subir nada a la nube.
+
+COMO INSTALAR
+-------------
+1. Copia toda la carpeta "Kit_Notas_De_Voz" a tu PC (puede ser el Escritorio).
+2. Doble clic en  INSTALAR.bat
+3. Acepta los UAC ("Si") cuando pida permisos para instalar Python y FFmpeg.
+4. Espera 10-20 minutos (descarga torch ~800 MB + modelo Whisper ~460 MB).
+5. Al terminar tendras en tu Escritorio un acceso directo "Notas de Voz".
+
+COMO USAR
+---------
+- Doble clic en "Notas de Voz" del Escritorio.
+- Se abre una ventana para elegir el archivo de audio.
+- Espera (1-3 minutos por cada 10 min de audio en CPU normal).
+- Al lado del audio queda un archivo  <nombre>_transcripcion.txt
+
+REQUISITOS
+----------
+- Windows 10 / 11
+- Conexion a internet la primera vez (para descargas)
+- ~3 GB libres en C:
+- winget disponible (viene con Windows 11; en Win10 actualizar
+  "App Installer" desde Microsoft Store)
+
+SE INSTALA EN
+-------------
+- C:\Notas_De_Voz\           (script + venv + modelo)
+- C:\ffmpeg_local\ffmpeg.exe (binario de FFmpeg)
+
+PROBLEMAS
+---------
+- Si dice "winget no esta disponible": abre Microsoft Store, busca
+  "App Installer" y actualizalo. Vuelve a correr INSTALAR.bat.
+- Si torch falla en descargar: vuelve a correr INSTALAR.bat
+  (reintenta donde quedo).
+- Si el audio es muy ruidoso o muy largo (>1 hora) la transcripcion
+  puede demorar bastante; es normal.
+
+CONTACTO
+--------
+David Cordoba - Conectar Valores S.A.S.

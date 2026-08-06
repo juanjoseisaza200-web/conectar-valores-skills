@@ -1,0 +1,10 @@
+{
+  "name": "plugin-automatizado-pptx-conectar-valores",
+  "version": "1.0.0",
+  "description": "Genera (y eventualmente audita) presentaciones PowerPoint para Conectar Valores S.A.S. aplicando un grid derivado al estilo Muller-Brockmann y la identidad visual exacta de la marca. Incluye mb-generate (creacion de decks desde cero, backtested) y mb-format (placeholder, no implementado).",
+  "keywords": ["pptx", "powerpoint", "conectar-valores", "presentaciones", "grid", "muller-brockmann"],
+  "author": {
+    "name": "JJ"
+  },
+  "license": "UNLICENSED"
+}
