@@ -15,6 +15,7 @@ Colección de skills, plugins y kits para Claude usados en Conectar Valores S.A.
 | `auditoria-md-conectar` | Auditoría de modelos financieros con mentalidad de MD: protocolo de 17 fases, backtesting PxQ, CFADS/DSCR/covenants, sensibilidades. |
 | `dashboard-conectar` | Dashboards ejecutivos en Excel (`.xlsm`) estilo one-pager, charts dinámicos sin VBA, con auditoría de cifras contra el modelo. |
 | `aprender-de-errores` | Mejora continua: registra lecciones cuando una verificación falla o el usuario corrige un error, y las consulta antes de repetir un tipo de tarea. |
+| `markitdown` | Wrapper de [microsoft/markitdown](https://github.com/microsoft/markitdown): convierte PDF, docx, pptx, xlsx, HTML, CSV/JSON/XML, ZIP, EPub, imágenes y YouTube a Markdown para leerlos/analizarlos con Claude. Requiere `pip install "markitdown[all]"`. |
 
 ### `plugins/` — Plugins de Claude Code
 
