@@ -457,10 +457,14 @@ def add_table_vf3(doc, headers, rows, *, highlight_row=None, col_widths_in=None)
         tblPr.remove(tb)
 
     # Anchos de columna
+    # OJO: setear row.cells[i].width NO alcanza — con tblLayout=fixed, Word
+    # dibuja según tblGrid (ancho a nivel de tabla), no tcW por celda. Hay
+    # que usar table.columns[i].width, que sí actualiza tblGrid.
     if col_widths_in is None:
         # Distribuir uniforme sobre 6.92"
         col_widths_in = [6.92 / n_cols] * n_cols
     for i, w in enumerate(col_widths_in):
+        table.columns[i].width = Inches(w)
         for row in table.rows:
             row.cells[i].width = Inches(w)
 

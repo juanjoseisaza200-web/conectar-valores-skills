@@ -12,13 +12,13 @@ FIXES iter 2:
 - Imágenes embedidas en input → extraídas a tempdir y re-insertadas con add_image
 - Tablas con celdas anidadas → degradadas gracefully (toman primera tabla anidada)
 """
-import os, sys, io, tempfile, zipfile, shutil
+import os, sys, io, re, tempfile, zipfile, shutil
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from vf3_styles import (
-    open_blank_template, add_h1, add_h2, add_h3, add_paragraph, add_bullet,
+    open_blank_template, set_footer_text, add_h1, add_h2, add_h3, add_paragraph, add_bullet,
     add_caption, add_footnote, add_table_vf3, add_formula_block, add_image,
     _set_run_props, _set_para_spacing,
     SZ_BODY, SZ_FOOTNOTE, NAVY, Inches,
@@ -139,12 +139,26 @@ def get_image_rels(src):
     return rels
 
 
+def title_from_input(src, input_path):
+    """Título para el footer: primer Heading 1/Title del documento origen,
+    o si no hay, el nombre del archivo limpiado de fecha/sufijo de versión.
+    """
+    for p in src.paragraphs:
+        if p.style and p.style.name in ('Title', 'Heading 1') and p.text.strip():
+            return p.text.strip()
+    base = os.path.splitext(os.path.basename(input_path))[0]
+    base = re.sub(r'^\d{8}_', '', base)
+    base = re.sub(r'_v\d+$|_VF\d*$', '', base, flags=re.I)
+    return base.replace('_', ' ').strip()
+
+
 def reformat(input_path, output_path):
     print(f"[INFO] Input:  {input_path}")
     print(f"[INFO] Output: {output_path}")
 
     src = Document(input_path)
     dst = open_blank_template()
+    set_footer_text(dst, title_from_input(src, input_path))
 
     # Extraer imágenes embebidas a tempdir
     image_files, tmpdir = extract_images_from_docx(input_path)
