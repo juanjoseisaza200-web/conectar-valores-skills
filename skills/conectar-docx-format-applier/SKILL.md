@@ -37,8 +37,9 @@ Antes de tocar contenido, leer:
 
 ### Paso 2 — Abrir template clonado
 ```python
-from templates.vf3_styles import open_blank_template, add_h1, add_h2, add_paragraph, add_table_vf3, add_caption, add_footnote
+from templates.vf3_styles import open_blank_template, set_footer_text, add_h1, add_h2, add_paragraph, add_table_vf3, add_caption, add_footnote
 doc = open_blank_template()  # ← hereda los 168 estilos del VF3, footer, theme, márgenes
+set_footer_text(doc, "Informe de Peers", sector="Sector Aseo Colombia")  # ⚠️ OBLIGATORIO — si no se llama, el footer queda con el texto literal del VF3 original ("Informe Peers Interaseo Mayo")
 ```
 
 ### Paso 3 — Inyectar contenido

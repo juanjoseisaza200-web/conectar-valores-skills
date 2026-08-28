@@ -12,7 +12,7 @@ USO: from peers-format-applier.templates.vf3_styles import *
      doc.save("output.docx")
 """
 
-import os, shutil, copy
+import os, shutil, copy, datetime
 from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -75,6 +75,35 @@ def open_blank_template():
     if not os.path.exists(BLANK_TEMPLATE):
         raise FileNotFoundError(f"Template no encontrado: {BLANK_TEMPLATE}. Correr build_blank_template.py")
     return Document(BLANK_TEMPLATE)
+
+
+_MESES_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+             "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+
+
+def set_footer_text(doc, titulo, sector=None, fecha=None):
+    """Reemplaza el texto del footer heredado del VF3 (queda "Informe Peers
+    Interaseo Mayo" si no se llama). Mantiene la estructura de 3 tramos y el
+    formato (tamaño, itálica) de cada uno — solo cambia el texto.
+
+    - Tramo izquierdo: titulo (+ " — " + sector si se da)
+    - Tramo centro: "Confidencial — Uso interno Conectar Valores" (fijo, no se toca)
+    - Tramo derecho: fecha, o mes/año actual en español si no se da
+    """
+    if fecha is None:
+        now = datetime.datetime.now()
+        fecha = f"{_MESES_ES[now.month - 1].capitalize()} {now.year}"
+    izquierda = f"{titulo} — {sector}" if sector else titulo
+
+    runs = doc.sections[0].footer.paragraphs[0].runs
+    texto_runs = [r for r in runs if r.text.strip()]
+    if not texto_runs:
+        return doc
+
+    texto_runs[0].text = izquierda
+    if len(texto_runs) >= 3:
+        texto_runs[-1].text = fecha
+    return doc
 
 
 # =====================================================================
